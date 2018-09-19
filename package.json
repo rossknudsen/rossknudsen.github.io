@@ -7,7 +7,9 @@
     "gh-pages": "^2.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts-ts": "2.17.0"
+    "react-scripts-ts": "2.17.0",
+    "styled-components": "^3.4.4",
+    "styled-icons": "^2.3.2"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -22,6 +24,7 @@
     "@types/node": "^10.10.1",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
+    "@types/styled-components": "^3.0.0",
     "typescript": "^3.0.3"
   }
 }
