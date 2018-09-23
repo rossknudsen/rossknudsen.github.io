@@ -20,25 +20,25 @@ export interface IEmployer {
 
 const nzhl = {
     description: "NZ Home Loans is a financial institution that aims to help kiwis become debt-free faster.",
-    logoUrl: "assets/img/nzhl-logo.png",
+    logoUrl: "img/nzhl-logo.png",
     name: "NZ Home Loans",
 };
 
 const gravity = {
     description: "Gravity Computing build bespoke IT solutions and provide IT administration services.",
-    logoUrl: "assets/img/gravity-computing-logo.png",
+    logoUrl: "img/gravity-computing-logo.png",
     name: "Gravity Computing",
 };
 
 const ecolab = {
     description: "Ecolab is a world leader in cleaning and sanitisation products for various industrial and consumer markets.",
-    logoUrl: "assets/img/ecolab-logo.png",
+    logoUrl: "img/ecolab-logo.png",
     name: "Ecolab",
 };
 
 const fonterra = {
     description: "World leading dairy producer",
-    logoUrl: "assets/img/fonterra-logo.jpg",
+    logoUrl: "img/fonterra-logo.jpg",
     name: "Fonterra",
 };
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../../styled-components';
+import IThemeInterface from '../../theme';
 
-const calloutColor = '#546e7a';
 const iconWidth = 75;
 const calloutSize = 7;
 const cardGap = 10;
@@ -14,18 +14,16 @@ export interface ITimelineItemProps {
     color: string;
 }
 
-const TimelineItem = (props: ITimelineItemProps): JSX.Element => {
-    return (
-        <TimelineItemStyled>
-            <TimelineIcon background={props.background} color={props.color}>
-                {props.icon}
-            </TimelineIcon>
-            <TimelineContent alignRight={(props.index % 2 === 0)}>
-                {props.content}
-            </TimelineContent>
-        </TimelineItemStyled>
-    );
-}
+const TimelineItem = (props: ITimelineItemProps): JSX.Element => (
+    <TimelineItemStyled>
+        <TimelineIcon background={props.background} color={props.color}>
+            {props.icon}
+        </TimelineIcon>
+        <TimelineContent alignRight={(props.index % 2 === 0)}>
+            {props.content}
+        </TimelineContent>
+    </TimelineItemStyled>
+);
 
 const TimelineItemStyled = styled.div`
     margin-bottom: 25px;
@@ -40,7 +38,11 @@ const TimelineItemStyled = styled.div`
     }
 `;
 
-const TimelineContent = styled.div`
+interface ITestProps {
+    alignRight: boolean;
+}
+
+const TimelineContent = styled.div<ITestProps>`
     width: calc(50% - ${iconWidth / 2}px - 10px);
     background: #fff;
     transition: all .3s ease;    
@@ -55,26 +57,7 @@ const TimelineContent = styled.div`
         border-bottom: ${calloutSize}px solid transparent;        
     }
 
-    ${(props: {alignRight: boolean}) => {
-        if (props.alignRight) {
-            return css`
-                &:before {
-                    left: calc(50% - ${iconWidth / 2}px - ${cardGap}px);
-                    border-left: ${calloutSize}px solid ${calloutColor};
-                }
-            `;
-        } else {
-            return css`
-                float: right;
-                &:before {
-                    right: calc(50% - ${iconWidth / 2}px - ${cardGap}px);
-                    left: inherit;
-                    border-left: 0;
-                    border-right: ${calloutSize}px solid ${calloutColor};
-                }
-            `;
-        }
-    } }
+    ${(props) => getAlignmentCss(props.theme, props.alignRight)}
 
     @media screen and (max-width: 768px) {
         width: 90%;
@@ -83,10 +66,31 @@ const TimelineContent = styled.div`
             left: ${iconWidth + cardGap}px;
             margin-left: -6px;
             border-left: 0;
-            border-right: ${calloutSize}px solid ${calloutColor};
+            border-right: ${calloutSize}px solid ${props => props.theme.light};
         }
     }            
 `;
+
+const getAlignmentCss = (theme: IThemeInterface, alignRight: boolean) => {
+    if (alignRight) {
+        return css`
+            &:before {
+                left: calc(50% - ${iconWidth / 2}px - ${cardGap}px);
+                border-left: ${calloutSize}px solid ${theme.light};
+            }
+        `;
+    } else {
+        return css`
+            float: right;
+            &:before {
+                right: calc(50% - ${iconWidth / 2}px - ${cardGap}px);
+                left: inherit;
+                border-left: 0;
+                border-right: ${calloutSize}px solid ${theme.light};
+            }
+        `;
+    }
+}
 
 interface ITimelineIconProps {
     background: string;

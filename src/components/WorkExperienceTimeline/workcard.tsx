@@ -1,55 +1,8 @@
 import * as React from 'react';
-import workExperience, { IPosition, ITenure } from "../data/WorkExperience";
-import IThemeInterface from '../theme';
-import Card from './Card';
-import Timeline from "./Timeline/TimelineComponent";
+import { IPosition, ITenure } from "../../data/WorkExperience";
+import IThemeInterface from '../../theme';
+import Card from '../Card';
 
-
-interface IWorkExperienceTimelineProps {
-    theme: IThemeInterface;
-}
-
-const WorkExperienceTimeline = (props: IWorkExperienceTimelineProps) => {
-    const icon = (tenure: ITenure) => <Icon {...props} from={tenure.positions[0].from} />;
-    const content = (tenure: ITenure) => <WorkCard {...props} tenure={tenure} />;
-    return (
-        <Timeline
-            timelineColor={props.theme.accentDark}
-            renderIcon={icon}
-            renderContent={content}
-            items={workExperience} />
-    );
-}
-
-interface IIconProps {
-    from: number | Date;
-    theme: IThemeInterface;
-}
-
-const Icon = (props: IIconProps): JSX.Element => {
-    const { from } = props;
-    let year: number;
-    let month: string | null = null;
-
-    if (from instanceof Date) {
-        const date: Date = from;
-        year = date.getFullYear();
-        month = date.toLocaleString("en-US", { month: "long" });
-    }
-    else if (typeof from === "number") {
-        year = from;
-    }
-    else {
-        throw Error("Unable to process date for icon.");
-    }
-
-    // let partyear: string = year.toString().substr(2, 2);
-    if (month) {
-        return (<>{month}<br />{year}</>);
-    } else {
-        return (<>{year}</>);
-    }
-}
 
 interface IWorkCardProps {
     tenure: ITenure;
@@ -61,7 +14,7 @@ const WorkCard = (props: IWorkCardProps): JSX.Element => {
         <Card title={props.tenure.employer.name}
             content={<Content {...props} />}
             reveal={<Reveal {...props} />}
-            // imageUrl={employer.logoUrl}
+            imageUrl={props.tenure.employer.logoUrl}
             backgroundColor={props.theme.light}
             foregroundColor={props.theme.dark}
         />
@@ -98,6 +51,7 @@ const Duration = (props: IDurationProps) => {
 
     return <>{props.position.duration} ({from} - {to})</>;
 }
+
 
 // This function returns a string that presents the given input for display.  The input is a full date
 // or just a number representing the year.
@@ -160,4 +114,4 @@ const combinePositionData = (tenure: ITenure, positionPropertySelect: (p: IPosit
     );
 }
 
-export default WorkExperienceTimeline;
+export default WorkCard;
