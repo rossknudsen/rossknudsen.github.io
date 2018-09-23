@@ -1,3 +1,4 @@
+import { breakpoints } from '../../breakpoints';
 import * as React from 'react';
 import styled from '../../styled-components';
 import TimelineItem from './TimelineItem';
@@ -55,7 +56,7 @@ const TimelineStyled = styled.div<{timelineColor: string}>`
         width: 100%;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: ${breakpoints.xtraLarge}) {
         margin: 30px;
         padding: 0px;
         width: 90%;

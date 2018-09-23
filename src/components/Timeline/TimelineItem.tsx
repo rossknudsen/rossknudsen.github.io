@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled, { css } from '../../styled-components';
 import IThemeInterface from '../../theme';
+import { breakpoints } from '../../breakpoints';
 
 const iconWidth = 75;
 const calloutSize = 7;
@@ -59,7 +60,7 @@ const TimelineContent = styled.div<ITestProps>`
 
     ${(props) => getAlignmentCss(props.theme, props.alignRight)}
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: ${breakpoints.xtraLarge}) {
         width: 90%;
         float: right;
         &:before {
@@ -115,7 +116,7 @@ const TimelineIcon = styled.div<ITimelineIconProps>`
     font-size: 1.5rem;
     font-weight: bold;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: ${breakpoints.xtraLarge}) {
         left: 0;                
     }
 `;
