@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ThemeProvider } from '../styled-components';
 import { theme } from '../theme';
 import { Footer } from './Footer'
-import GradesComponent from './GradesComponent';
+import { Grades } from './Grades';
 import { Header } from './header';
 import Paragraph from './Paragraph';
 import Qualifications from './Qualifications';
@@ -38,7 +38,7 @@ perferendis neque voluptates animi explicabo est harum veritatis quae aspernatur
                                     <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos iusto non nemo expedita, id ad fugit voluptatum
 perferendis neque voluptates animi explicabo est harum veritatis quae aspernatur rerum odio.</Paragraph>
 
-                                    <GradesComponent />
+                                    <Grades />
                         </Section>
                     </div>
 
