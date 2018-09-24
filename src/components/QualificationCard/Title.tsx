@@ -9,7 +9,8 @@ const Title = (props: IQualCardProps) => {
     const {title, papersRemaining} = props.data;
     return (
         <span>
-            {title} <PapersRemaining papersRemaining={papersRemaining}/>
+            <PapersRemaining papersRemaining={papersRemaining}/>
+            <span className="card-title">{title}</span>
         </span>
     );
 }

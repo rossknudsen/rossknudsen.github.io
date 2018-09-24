@@ -7,7 +7,7 @@ import Reveal from './Reveal';
 
 interface ICardProps {
     backgroundColor?: string;
-    
+
     foregroundColor?: string;
 
     className?: string;
@@ -28,25 +28,23 @@ interface ILink {
     description: string
 }
 
-const CardStyled = styled.div.attrs({ className: "card hoverable" })`
-    background-color: ${props => props.theme.light || 'white'};
-    color: ${props => props.theme.dark || 'black'};
+const CardStyled = styled.div.attrs<ICardProps>({ className: "card hoverable" })`
+    background-color: ${props => props.backgroundColor || props.theme.light};
+    color: ${props => props.foregroundColor || props.theme.dark};
 `;
 
-const Card = (props: ICardProps) => {
-    return (
-        <CardStyled >
-            <Image imageUrl={props.imageUrl} />
+const Card = (props: ICardProps) => (
+    <CardStyled>
+        <Image imageUrl={props.imageUrl} />
 
-            <Content title={props.title} content={props.content} imageUrl={props.imageUrl} />
+        <Content title={props.title} content={props.content} imageUrl={props.imageUrl} />
 
-            <Reveal title={props.title}>
-                {props.reveal}
-            </Reveal>
+        <Reveal title={props.title}>
+            {props.reveal}
+        </Reveal>
 
-            <Actions links={props.actions} />
-        </CardStyled>
-    )
-}
+        <Actions links={props.actions} />
+    </CardStyled>
+);
 
 export default Card;

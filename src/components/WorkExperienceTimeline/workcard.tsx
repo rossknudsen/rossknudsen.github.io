@@ -15,8 +15,6 @@ const WorkCard = (props: IWorkCardProps): JSX.Element => {
             content={<Content {...props} />}
             reveal={<Reveal {...props} />}
             imageUrl={props.tenure.employer.logoUrl}
-            backgroundColor={props.theme.light}
-            foregroundColor={props.theme.dark}
         />
     );
 }

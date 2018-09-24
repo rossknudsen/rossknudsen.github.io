@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from '../../styled-components';
 import { SocialContainer } from './SocialContainer';
 
-export default () => {
+export const Footer = () => {
     return (
-        <Footer>
+        <FooterStyled>
             <div className="container">
                 <div className="row">
                     <div className="col l6 s12">
@@ -21,8 +21,11 @@ export default () => {
                     &copy; 2018 Ross Knudsen
                 </div>
             </div>
-        </Footer>
+        </FooterStyled>
     )
 }
 
-const Footer = styled.footer.attrs({ className: "page-footer teal darken-2" })``;
+const FooterStyled = styled.footer.attrs({ className: "page-footer" })`
+    background-color: ${props => props.theme.dark};
+    color: ${props => props.theme.light};
+`;
