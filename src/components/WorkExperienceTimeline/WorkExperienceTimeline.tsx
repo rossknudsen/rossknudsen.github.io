@@ -15,7 +15,6 @@ const WorkExperienceTimeline = (props: IWorkExperienceTimelineProps) => {
     const content = (tenure: ITenure) => <WorkCard {...props} tenure={tenure} />;
     return (
         <Timeline
-            timelineColor={props.theme.accentDark}
             renderIcon={icon}
             renderContent={content}
             items={workExperience} />

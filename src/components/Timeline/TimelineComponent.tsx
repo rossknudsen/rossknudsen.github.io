@@ -3,50 +3,55 @@ import * as React from 'react';
 import styled from '../../styled-components';
 import TimelineItem from './TimelineItem';
 
-export interface ITimelineProps<T> {
+const lineWidth = 7;
 
-    // TODO I would like to change the types of the parameters of the functions
-    // passed into the constructor to be of type 'T' but this causes errors.
-    renderIcon: (t: any) => JSX.Element;
-    renderContent: (t: any) => JSX.Element;
-    items: any[];
-    timelineColor: string;
+export interface ITimelineProps<T> {
+    renderIcon: (t: T) => JSX.Element;
+    renderContent: (t: T) => JSX.Element;
+    items: T[];
 }
 
 export default class Timeline<T> extends React.Component<ITimelineProps<T>, any> {
 
     public render(): JSX.Element {
-        const { items, renderContent, renderIcon, timelineColor } = this.props;
+        const { items, renderContent, renderIcon } = this.props;
         return (
-            <TimelineStyled timelineColor={timelineColor}>
+            <TimelineStyled>
                 {items.map((e, i) => (
                     <TimelineItem key={i} 
                         icon={renderIcon(e)}
-                        content={renderContent(e)}
-                        index={i}
-                        background={timelineColor} 
-                        color="white" />
+                        content={renderContent(e)} />
                 ))}
             </TimelineStyled>
         );
     }  
 }
 
-const TimelineStyled = styled.div<{timelineColor: string}>`
+const TimelineStyled = styled.div`
     width: 100%;
     margin: 30px auto;
     position: relative;
     padding: 0 10px;
     transition: all .4s ease;
 
+    @media screen and (max-width: ${breakpoints.xtraLarge}) {
+        margin: 30px;
+        padding: 0px;
+        width: 90%;
+    }
+
     &:before {
         content: "";
-        width: 3px;
+        width: ${lineWidth}px;
         height: 100%;
-        background: ${props => props.timelineColor};
-        left: 50%;
+        background: ${props => props.theme.accentDark};
+        left: calc(50% - ${lineWidth / 2}px);
         top: 0;
         position: absolute;
+
+        @media screen and (max-width: ${breakpoints.xtraLarge}) {
+            left: 0;
+        }
     }
 
     &:after {
@@ -54,15 +59,6 @@ const TimelineStyled = styled.div<{timelineColor: string}>`
         clear: both;
         display: table;
         width: 100%;
-    }
-
-    @media screen and (max-width: ${breakpoints.xtraLarge}) {
-        margin: 30px;
-        padding: 0px;
-        width: 90%;
-        &:before {
-            left: 0;
-        }
     }
 `;
 
