@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Main from './components/Main';
-import registerServiceWorker from './registerServiceWorker';
 import { injectGlobal } from "./styled-components";
 import { theme } from './theme';
 
@@ -31,4 +30,3 @@ ReactDOM.render(
   <Main />,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();
