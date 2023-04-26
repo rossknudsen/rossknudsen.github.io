@@ -1,49 +1,45 @@
 export enum SkillType {
-    Language,
-    Technology,
-    Framework,
-    Tool
+  Language,
+  Technology,
+  Framework,
+  Tool,
 }
 
-export class Skill {
-    constructor(
-        public name: string,
-        public type: SkillType
-    ) { }
+export interface ISkill {
+  name: string;
+  type: SkillType;
+  rating: number
 }
 
-const Skills: Skill[] = [
+const Skills: ISkill[] = [
+  { name: "C#.Net", type: SkillType.Language, rating: 5 },
+  { name: "Typescript/Javascript", type: SkillType.Language, rating: 4 },
+  { name: "SQL", type: SkillType.Language, rating: 4 },
+  { name: "Python", type: SkillType.Language, rating: 2 },
+  { name: "HTML", type: SkillType.Language, rating: 4 },
+  { name: "CSS", type: SkillType.Language, rating: 3 },
+  { name: "ASP.Net Core", type: SkillType.Technology, rating: 5 },
+  { name: "Azure Functions", type: SkillType.Technology, rating: 5 },
+  { name: "Java", type: SkillType.Language, rating: 1 },
 
-    { name: "C#.Net", type: SkillType.Language },
-    { name: "VB.Net", type: SkillType.Language },
-    { name: "Java", type: SkillType.Language },
-    { name: "Javascript", type: SkillType.Language },
-    { name: "Typescript", type: SkillType.Language },
-    { name: "SQL", type: SkillType.Language },
-    { name: "Python", type: SkillType.Language },
-    { name: "HTML", type: SkillType.Language },
-    { name: "CSS", type: SkillType.Language },
-    { name: "VBA", type: SkillType.Language },
+  { name: "SQL", type: SkillType.Technology, rating: 4 },
+  { name: "SQL Server", type: SkillType.Technology, rating: 4 },
+  { name: "Sqlite", type: SkillType.Technology, rating: 3 },
+  { name: "Entity Framework Core", type: SkillType.Framework, rating: 5 },
 
-    { name: "MySQL", type: SkillType.Technology },
-    { name: "SQL Server", type: SkillType.Technology },
-    { name: "Sqlite" , type: SkillType.Technology},
-    { name: "Entity Framework (6+, Core)", type: SkillType.Framework },
-    { name: "Automapper", type: SkillType.Framework },
-    { name: "XUnit", type: SkillType.Framework },
+  // Unit Testing
+  { name: "XUnit", type: SkillType.Framework, rating: 5 },
+  { name: "NUnit", type: SkillType.Framework, rating: 4 },
+  { name: "Jest", type: SkillType.Framework, rating: 4 },
+  { name: "Jest", type: SkillType.Framework, rating: 4 },
 
-    { name: "Azure Apps", type: SkillType.Technology },
-    { name: "Azure Functions", type: SkillType.Technology },
-    { name: "Office 365", type: SkillType.Technology },
+  // Cloud
+  { name: "Azure", type: SkillType.Technology, rating: 4 },
 
-    { name: "Git", type: SkillType.Tool },
-    { name: "Visual Studio", type: SkillType.Tool },
-    { name: "Visual Studio Code", type: SkillType.Tool },
-    { name: "SQL Server Management Studio", type: SkillType.Tool },
-    { name: "NetBeans", type: SkillType.Tool },
-    { name: "IntelliJ Idea", type: SkillType.Tool },
-    { name: "SourceTree (Git client)", type: SkillType.Tool },
-
+  { name: "Git", type: SkillType.Tool, rating: 5 },
+  { name: "Visual Studio", type: SkillType.Tool, rating: 5 },
+  { name: "Visual Studio Code", type: SkillType.Tool, rating: 5 },
+  // Linqpad
 ];
 
 export default Skills;

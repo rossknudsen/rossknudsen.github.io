@@ -17,7 +17,7 @@ const qualifications: IQualificationData[] = [
     },
     {
         completed: "2018",
-        institution: "Rice University (Coursera)",
+        institution: "Rice University - Coursera",
         link: {
             description: "Certificate",
             url: "https://www.coursera.org/account/accomplishments/specialization/certificate/HBBH2KKV5W67"

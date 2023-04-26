@@ -14,7 +14,7 @@ import { Footer } from "./Footer";
 import { Grades } from "./Grades";
 import Qualifications from "./Qualifications";
 import { Section } from "./Section";
-import { SkillsComponent } from "./SkillsComponent";
+import Skills from "./SkillsComponent";
 import WorkExperienceTimeline from "./WorkExperienceTimeline";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -71,7 +71,7 @@ export default () => {
               <WorkExperienceTimeline />
             </Section>
             <Section title="Skills">
-              <SkillsComponent />
+              <Skills />
             </Section>
             <Section title="Qualifications">
               <Qualifications />
