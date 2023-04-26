@@ -9,11 +9,10 @@ const qualifications: IQualificationData[] = [
         title: "Bachelor of Science",
     },
     {
-        completed: "approx. 2019",
+        completed: "2019",
         institution: "Massey University",
         major: "Finance",
         minor: "Computer Science",
-        papersRemaining: 2,
         title: "Bachelor of Business",
     },
     {

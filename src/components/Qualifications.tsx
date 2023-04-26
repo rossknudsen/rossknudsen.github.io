@@ -1,9 +1,8 @@
 import * as React from 'react';
 import qualifications from "../data/Qualifications";
 import QualificationCard from './QualificationCard';
-import IThemeInterface from '../theme';
 
-const Qualifications = (props: {theme: IThemeInterface}) => (
+const Qualifications = (props: {}) => (
     <>{qualifications.map((q, i) => <QualificationCard key={i} data={q} />)}</>
 );
 

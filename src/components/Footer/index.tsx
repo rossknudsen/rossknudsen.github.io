@@ -1,10 +1,10 @@
 import * as React from 'react';
-import styled from '../../styled-components';
 import { SocialContainer } from './SocialContainer';
+import BottomNavigation from '@mui/material/BottomNavigation';
 
 export const Footer = () => {
     return (
-        <FooterStyled>
+        <BottomNavigation>
             <div className="container">
                 <div className="row">
                     <div className="col l6 s12">
@@ -21,11 +21,6 @@ export const Footer = () => {
                     &copy; 2018 Ross Knudsen
                 </div>
             </div>
-        </FooterStyled>
+        </BottomNavigation>
     )
 }
-
-const FooterStyled = styled.footer.attrs({ className: "page-footer" })`
-    background-color: ${props => props.theme.dark};
-    color: ${props => props.theme.light};
-`;

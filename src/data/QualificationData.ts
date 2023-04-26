@@ -4,7 +4,6 @@ export interface IQualificationData {
     completed: string;
     major?: string;
     minor?: string;
-    papersRemaining?: number;
     supportingSubjects?: string;
     link?: ILink;
 }

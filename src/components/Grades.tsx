@@ -24,7 +24,7 @@ const renderSection = (title: string, filter: string): any => {
     const filteredGrades = grades.filter(g => g.type === filter);
 
     return (
-        <React.Fragment>
+        <>
             <tr>
                 <td colSpan={3}>
                     <span className="table-subtitle">{title}</span>
@@ -32,7 +32,7 @@ const renderSection = (title: string, filter: string): any => {
             </tr>
 
             {filteredGrades.map((g, i) => renderGrade(g, i))}
-        </React.Fragment>
+        </>
     );
 }
 
