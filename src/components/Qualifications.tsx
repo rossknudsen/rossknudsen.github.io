@@ -21,7 +21,7 @@ const QualificationCard = ({
   data: { completed, institution, title, major, minor },
 }: QualificationCardProps) => {
   return (
-    <Card sx={{ display: "flex" }}>
+    <Card sx={{ display: "flex" }} >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography variant="h5">
