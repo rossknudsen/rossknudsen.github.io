@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Footer } from "./Footer";
-import { Grades } from "./Grades";
+import Grades from "./Grades";
 import Qualifications from "./Qualifications";
 import { Section } from "./Section";
 import Skills from "./SkillsComponent";
@@ -48,7 +48,7 @@ export default () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar>
+        <AppBar position="sticky">
           <Toolbar>
             <IconButton
               size="large"

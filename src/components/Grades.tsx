@@ -1,49 +1,62 @@
-import * as React from 'react';
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import React from "react";
 import grades, { Grade } from "../data/Grades";
+import Typography from "@mui/material/Typography";
 
-const Grades = () => (
-    <div className="col m12 l10 push-l1 xl8 push-xl2">
-        <table id="grades" className="highlight">
-            <thead>
-                <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody>
-                {renderSection("Computer Science", "cs")}
-                {renderSection("Finance", "fin")}
-                {renderSection("Mathematics", "math")}
-            </tbody>
-        </table>
-    </div>
-);
+type ColDef = GridColDef<Grade> & { field: keyof Grade };
 
-const renderSection = (title: string, filter: string): any => {
-    const filteredGrades = grades.filter(g => g.type === filter);
+const columns: ColDef[] = [
+  { field: "code", headerName: "Code", width: 90 },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 300,
+  },
+  {
+    field: "grade",
+    headerName: "Grade",
+    width: 90,
+  },
+];
 
-    return (
-        <>
-            <tr>
-                <td colSpan={3}>
-                    <span className="table-subtitle">{title}</span>
-                </td>
-            </tr>
+const compSci = grades.filter((x) => x.type === "cs");
+const math = grades.filter((x) => x.type === "math");
+const finance = grades.filter((x) => x.type === "fin");
 
-            {filteredGrades.map((g, i) => renderGrade(g, i))}
-        </>
-    );
+interface TableProps {
+  grades: Grade[];
 }
 
-const renderGrade = (grade: Grade, index: number) => {
-    return (
-        <tr key={index}>
-            <td>{grade.code}</td>
-            <td>{grade.title}</td>
-            <td>{grade.grade}</td>
-        </tr>
-    );
-}
+const Table = ({ grades }: TableProps) => {
+  return (
+    <DataGrid
+      rows={grades}
+      columns={columns}
+      getRowId={(g) => g.code}
+      initialState={{
+        pagination: {
+          paginationModel: {
+            pageSize: 50,
+          },
+        },
+      }}
+      pageSizeOptions={[50]}
+      disableRowSelectionOnClick
+    />
+  );
+};
 
-export { Grades };
+const Grades = () => {
+  return (
+    <>
+      <Typography variant="h5">Computer Science</Typography>
+      <Table grades={compSci} />
+      <Typography variant="h5">Finance</Typography>
+      <Table grades={finance} />
+      <Typography variant="h5">Math</Typography>
+      <Table grades={math} />;
+    </>
+  );
+};
+
+export default Grades;
