@@ -1,10 +1,9 @@
-import React from "react";
-import qualifications from "../data/Qualifications";
-import Foreach from "./Foreach";
-import Card from "@mui/material/Card";
-import { IQualificationData } from "../data/QualificationData";
 import { Box, CardContent, Typography } from "@mui/material";
-import Optional from "./Optional";
+import Card from "@mui/material/Card";
+import { IQualificationData } from "../../data/QualificationData";
+import qualifications from "../../data/Qualifications";
+import Foreach from "../Foreach";
+import Optional from "../Optional";
 
 const Qualifications = (props: {}) => (
   <Foreach
@@ -21,7 +20,7 @@ const QualificationCard = ({
   data: { completed, institution, title, major, minor },
 }: QualificationCardProps) => {
   return (
-    <Card sx={{ display: "flex" }} >
+    <Card sx={{ display: "flex", my: 2 }} raised >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography variant="h5">
