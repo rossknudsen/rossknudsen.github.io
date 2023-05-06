@@ -4,10 +4,8 @@ A personal site showing off my qualifications, experience and skills (a resume i
 
 This site was built with the following technologies:
 
- * React - using **create-react-app**
+ * React
  * Typescript
- * Materialize CSS
- * Styled Components
- * Styled Icons
+ * MUI
  * GH Pages
  
