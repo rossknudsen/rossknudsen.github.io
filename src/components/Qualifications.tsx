@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 import qualifications from "../data/Qualifications";
 import Foreach from "./Foreach";
 import Card from "@mui/material/Card";
-import { IQualificationData } from "src/data/QualificationData";
+import { IQualificationData } from "../data/QualificationData";
 import { Box, CardContent, Typography } from "@mui/material";
 import Optional from "./Optional";
 
