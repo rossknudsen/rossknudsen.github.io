@@ -67,7 +67,7 @@ export default () => {
         </AppBar>
         <Container>
           <div className="container">
-            <Section title="Work Experience">
+            <Section title="Experience">
               <WorkExperienceTimeline />
             </Section>
             <Section title="Skills">
