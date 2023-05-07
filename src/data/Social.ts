@@ -12,10 +12,6 @@ const socialData: ISocialProps[] = [
     {
         link: "https://www.linkedin.com/in/rossknudsen/",
         type: SocialOptions.linkedin,
-    },
-    {
-        link: "https://twitter.com/rossco898",
-        type: SocialOptions.twitter,
     }
 ];
 

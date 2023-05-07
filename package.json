@@ -4,27 +4,40 @@
   "private": true,
   "homepage": "https://rossknudsen.github.io",
   "dependencies": {
-    "gh-pages": "^2.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts-ts": "2.17.0",
-    "styled-components": "^3.4.4",
-    "styled-icons": "^2.3.2"
+    "@emotion/cache": "^11.10.6",
+    "@emotion/react": "^11.10.6",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.128",
+    "@mui/material": "^5.12.2",
+    "@mui/styles": "^5.12.3",
+    "@mui/x-data-grid": "^6.3.0",
+    "autoprefixer": "latest",
+    "clean-css": "latest",
+    "next": "^12.0.0",
+    "postcss": "latest",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "use-local-storage-state": "^17.2.0"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "@types/node": "^10.10.1",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
-    "@types/styled-components": "^3.0.0",
-    "typescript": "^3.0.3"
+    "@types/node": "^20.1.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "eslint": "^8.40.0",
+    "eslint-config-next": "^13.4.1",
+    "gh-pages": "^5.0.0",
+    "typescript": "^5.0.4"
   }
 }
