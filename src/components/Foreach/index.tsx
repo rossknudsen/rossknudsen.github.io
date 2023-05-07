@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ForeachProps<T> {
   items: T[];
   factory: (item: T, index: number) => React.ReactElement;

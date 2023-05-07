@@ -4,7 +4,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import React from "react";
 import workExperience, { IPosition, ITenure } from "../../data/WorkExperience";
 import Foreach from "../Foreach";
 import { Card, CardContent, Typography, useMediaQuery } from "@mui/material";

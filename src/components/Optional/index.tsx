@@ -1,5 +1,3 @@
-import React from "react";
-
 interface OptionalProps<T> {
     item?: T | undefined
     factory: (item: T) => React.ReactElement
