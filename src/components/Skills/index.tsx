@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText, Rating } from "@mui/material";
-import Skills, { ISkill, SkillType } from "../data/Skills";
-import Foreach from "./Foreach";
+import Skills, { ISkill, SkillType } from "../../data/Skills";
+import Foreach from "../Foreach";
 
 const SkillsComponent = () => (
   <>

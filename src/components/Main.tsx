@@ -14,7 +14,7 @@ import { Footer } from "./Footer";
 import Grades from "./Grades";
 import Qualifications from "./Qualifications";
 import { Section } from "./Section";
-import Skills from "./SkillsComponent";
+import Skills from "./Skills";
 import WorkExperienceTimeline from "./WorkExperienceTimeline";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
