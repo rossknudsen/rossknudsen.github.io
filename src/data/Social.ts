@@ -20,4 +20,5 @@ interface ISocialProps {
     link: string,
 }
 
-export { SocialOptions, ISocialProps, socialData };
+export { SocialOptions, socialData };
+export type { ISocialProps };

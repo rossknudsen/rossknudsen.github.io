@@ -1,5 +1,4 @@
 import { List, ListItem, ListItemText, Rating } from "@mui/material";
-import React from "react";
 import Skills, { ISkill, SkillType } from "../data/Skills";
 import Foreach from "./Foreach";
 

@@ -1,5 +1,4 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import React from "react";
 import grades, { Grade } from "../../data/Grades";
 import Typography from "@mui/material/Typography";
 import { useMediaQuery, useTheme } from "@mui/material";
