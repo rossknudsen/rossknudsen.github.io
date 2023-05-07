@@ -1,6 +1,6 @@
 import { Box, CardContent, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
-import { IQualificationData } from "../../data/QualificationData";
+import { IQualificationData } from "../../data/Qualifications";
 import qualifications from "../../data/Qualifications";
 import Foreach from "../Foreach";
 import Optional from "../Optional";
